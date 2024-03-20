@@ -1,1 +1,41 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing-Simulation Hinweis</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        h1 { color: #333; }
+        p { line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hinweis zur Phishing-Simulation</h1>
+        <p>Diese Phishing-Simulation ist Teil unserer Sicherheitsbewusstseins-Kampagne. Ihr Zugriff auf diese Seite wurde registriert, um die Effektivität unserer Kampagne zu messen. Keine Sorge, es wurden keine persönlichen Daten erfasst oder gespeichert. Ziel dieser Übung ist es, das Bewusstsein für die Bedeutung von Cybersicherheit zu schärfen und zu lernen, wie man Phishing-Versuche erkennt und vermeidet.</p>
+        <p>Danke für Ihre Teilnahme!</p>
+    </div>
+
+    <script>
+        // Einfacher Counter für den Seitenzugriff über einen bestimmten Link
+        // Dieses Beispiel nutzt die LocalStorage-API des Browsers, um die Zugriffe clientseitig zu zählen.
+        // Für eine umfassendere Analyse wäre serverseitige Logik oder ein externes Analysetool erforderlich.
+        function countAccess() {
+            const accessCountKey = 'accessCount';
+            const currentCount = localStorage.getItem(accessCountKey) || 0;
+            localStorage.setItem(accessCountKey, parseInt(currentCount) + 1);
+
+            // Optional: Zugriffszahl im Dokument anzeigen
+            document.getElementById('accessCount').textContent = localStorage.getItem(accessCountKey);
+        }
+
+        // Zugriff zählen, wenn die Seite geladen wird
+        window.onload = countAccess;
+    </script>
+    <div class="container">
+        <p>Zugriffe auf diese Seite: <span id="accessCount">0</span></p>
+    </div>
+</body>
+</html>
