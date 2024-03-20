@@ -18,24 +18,5 @@
         <p>Danke für Ihre Teilnahme!</p>
     </div>
 
-    <script>
-        // Einfacher Counter für den Seitenzugriff über einen bestimmten Link
-        // Dieses Beispiel nutzt die LocalStorage-API des Browsers, um die Zugriffe clientseitig zu zählen.
-        // Für eine umfassendere Analyse wäre serverseitige Logik oder ein externes Analysetool erforderlich.
-        function countAccess() {
-            const accessCountKey = 'accessCount';
-            const currentCount = localStorage.getItem(accessCountKey) || 0;
-            localStorage.setItem(accessCountKey, parseInt(currentCount) + 1);
-
-            // Optional: Zugriffszahl im Dokument anzeigen
-            document.getElementById('accessCount').textContent = localStorage.getItem(accessCountKey);
-        }
-
-        // Zugriff zählen, wenn die Seite geladen wird
-        window.onload = countAccess;
-    </script>
-    <div class="container">
-        <p>Zugriffe auf diese Seite: <span id="accessCount">0</span></p>
-    </div>
 </body>
 </html>
